@@ -17,8 +17,10 @@ class Post(models.Model):
         'Created_ DateTime', blank=True, auto_now=True
     )
     image = CloudinaryField(
-        'Image', blank=True, db_index=True
+        'Image', blank=True, null=True
     )
+    like_count=models.IntegerField('LikeCount',default=0,blank=True)
+    
 
     def __str__(self):
         return self.name

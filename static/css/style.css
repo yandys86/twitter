@@ -161,7 +161,7 @@ body{
 
     .post_form input[type=text]{
 
-            width: 110%;
+            width: 100%;
             height: 1px;
             border: 0px;
             background: #e6fef7;
@@ -177,7 +177,7 @@ body{
      .post_form textarea{
         border: 0px;
         padding: 20px;
-        width: 110%;
+        width: 100%;
         height: 100px;
         resize: none;
 
@@ -312,40 +312,34 @@ body{
             }
 
 
-        .icon-heart  {
-                width: 25px;
-    margin-right: 10px;
-    cursor: pointer;
-            }
 
-       .heart-btn{
-        position: absolute;
-        left: 130px; 
-        padding: 13px 16px;
-        margin-top: 15px;
-        border-radius: 5px;
-       }
-
-
-       .heart-btn .heart{
-        height: 90px;
-        width: 90px;
-        background: url("../img/icon-heart2.png") no-repeat;
+       .heart-btn {
+    
         background-position: left;        
         position: absolute;
         bottom: -19px;
         left: -12px;
-        cursor: pointer;
-        
+       
         
        }
 
+       #img-heart{
+          width: 28px; 
+          height: 28px;
+          border: none;
+          position: relative;
+          left: 110px;
+          
+       }
+      
+
+/*
        #heart-id{
            width: 100px;
            height: 100px;
        }
 
-/*
+
       i{
         height: 90px;
         width: 90px;
@@ -361,15 +355,15 @@ body{
         .numb{
         
         margin-left: 10px;
-        position: absolute;
-        left: 9px;
-        top: -16px;
+        position: relative;
+        left: 110px;
+        top: -17px;
         
        }
 
-       .heart-btn .heart:hover{
-        height: 100px;
-        width: 100px;
+       .heart-btn #img-heart:hover{
+        height: 29px;
+        width: 29px;
         filter: invert(1) sepia(1) saturate(20)hue-rotate(500deg);
         
         animation: animate .8s steps(28) 1;
@@ -416,4 +410,3 @@ body{
            filter: invert(1) sepia(1) saturate(20)hue-rotate(275deg);
        }
        
-     

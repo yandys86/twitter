@@ -14,7 +14,7 @@ $(function () {
 
 $(function () {
   //execute when the js-menu-icon js clicked
-
+  /*
   $(".btn1").click(function () {
     var btnvar1 = document.getElementById("btnh1");
     let contlike = document.getElementById("cont");
@@ -33,5 +33,27 @@ $(function () {
       contlike.textContent = cant += 1;
       cont = parseInt(contlike.textContent);
     }
+  });
+});
+*/
+
+  $(".img-heart").click(function () {
+    var btnvar1 = document.getElementById("img-heart");
+    let contlike = document.getElementById("cont");
+
+    if (btnvar1.style.color == "red") {
+      btnvar1.style.color = "grey";
+    } else {
+      btnvar1.style.color = "red";
+    }
+    /*
+    let cant = parseInt(contlike.textContent);
+    let cont = 0;
+    if (cant != cont) {
+      contlike.textContent = cant -= 1;
+    } else {
+      contlike.textContent = cant += 1;
+      cont = parseInt(contlike.textContent);
+    }*/
   });
 });

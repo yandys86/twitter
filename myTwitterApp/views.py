@@ -62,3 +62,12 @@ def delete(request, post_id):
     posts = Post.objects.get(id=post_id)
     posts.delete()
     return HttpResponseRedirect(str('/'))
+##################################################################
+
+def like(request, post_id):
+
+    post = Post.objects.get(id=post_id)
+    cont = post.like_count + 1 
+    post.like_count = cont 
+    post.save()
+    return HttpResponseRedirect('/')
