@@ -41,6 +41,9 @@ def base(request):
 
 ################################################################
 def index(request):
+
+    form = PostForm()
+
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid:
@@ -50,9 +53,11 @@ def index(request):
         else:
             return HttpResponseRedirect(form.errors.as_json())
 
-    posts = Post.objects.all()[:20]
+    posts = Post.objects.order_by('created_at').reverse().all()[:20]
     context = {
-        'posts': posts}
+        'posts': posts,
+        'form': form
+    }
     return render(request, 'index.html', context=context)
 
 
@@ -64,10 +69,11 @@ def delete(request, post_id):
     return HttpResponseRedirect(str('/'))
 ##################################################################
 
+
 def like(request, post_id):
 
     post = Post.objects.get(id=post_id)
-    cont = post.like_count + 1 
-    post.like_count = cont 
+    cont = post.like_count + 1
+    post.like_count = cont
     post.save()
     return HttpResponseRedirect('/')

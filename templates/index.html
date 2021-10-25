@@ -1,6 +1,10 @@
 {% extends "base.html" %} {% block content %} {% load static %} {% load cloudinary %}
 
 <section class="content">
+
+
+
+
   <section class="post_form">
     <div class="twitter_logo">
       <a href="/">
@@ -37,6 +41,9 @@
       </div>
     </div>
   </section>
+
+
+
   <section class="post">
     <ul>
       {% for post in posts %}
@@ -52,10 +59,10 @@
         <div class="body">
           <div class="name">{{ post.name }}</div>
           <div class="datetime">{{ post.created_at }}</div>
-          <p>{{ post.body }}
+          <p>{{ post.body }}</p>
 
           <img src="{{post.image.url}}">
-        </p>
+        
         <div class="heart-btn"> 
         <a href="/like/{{post.id}}/"><img src="{% static 'img/icon-heart2.png' %}" id="img-heart" class="img-heart"></a>
 
@@ -73,6 +80,10 @@
       {% endfor %}
     </ul>
   </section>
+
+
+
+
   <script
     src="https://code.jquery.com/jquery-3.6.0.js"
     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="

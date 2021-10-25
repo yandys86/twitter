@@ -26,7 +26,7 @@ body{
 
     
     max-width: 600px;
-    height: 100%;
+   
     margin: 0 auto;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
@@ -200,7 +200,9 @@ body{
         .post li {
             display: flex;
             padding: 17px;
-            position: relative;
+            position: relative;   
+            border-bottom: 1px solid black;
+            
         }
         .post li .logo{
 
@@ -236,11 +238,12 @@ body{
                 display: none;
                 top: 40px;
                 right: 15px;
-                border: 1px solid #ccc;
+                
                 background-color:white;
                 padding: 10px 15px;
                 font-size: 13px;
                 border-radius: 3px;
+                border: 1px solid cornsilk;
 
             }
             .post li .menu a {
@@ -259,6 +262,19 @@ body{
                 font-weight: bold;
             }
             .post li .body img{
+            
+                width: 90%;
+                
+                
+                object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    border: 1px solid rgb(197, 199, 201);
+               
+
+            }
+            /*.post li .body img{
                width: 100%;
     height: 300px;
     object-fit: cover;
@@ -266,7 +282,7 @@ body{
     margin-bottom: 10px;
     margin-right: 5px;
     border: 1px solid rgb(197, 199, 201);
-            }
+            }*/
 
             .content .edit_img img{
                 width: 80%;
