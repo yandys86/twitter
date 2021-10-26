@@ -19,24 +19,32 @@
       <div class="user_icon">
         <img src="{% static 'img/user.png' %}" />
       </div>
-      <div class="input-area">
+      <div class="input-area" id="area-input">
         <form action="/" method="POST" enctype="multipart/form-data">
 
           {% csrf_token %}
-          <input type="text" name="name" placeholder="Your name" required />
+          <input type="text" name="name" placeholder="Your name" required /><br>
+
           <textarea
             name="body"
             placeholder="What's happening?"
             maxlength="140"
             required
-          ></textarea>
+          ></textarea> <br>
+          <input type="file" name="image" class="image" />
+          <input type="submit" value="Tweet" class="bottom" />
+          <!--
+            {{form.image}} <br> <br>
           <div class="botton_area">
-          <div class="mb-0">
+          <div>
               <input type="file" name="image" class="image" />
            
           </div>
+          <div>
             <input type="submit" value="Tweet" class="bottom" />
           </div>
+            
+          </div>-->
         </form>
       </div>
     </div>
