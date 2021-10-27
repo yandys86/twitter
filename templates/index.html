@@ -31,7 +31,11 @@
             maxlength="140"
             required
           ></textarea> <br>
+
           <input type="file" name="image" class="image" />
+
+        
+
           <input type="submit" value="Tweet" class="bottom" />
           <!--
             {{form.image}} <br> <br>
@@ -68,8 +72,13 @@
           <div class="name">{{ post.name }}</div>
           <div class="datetime">{{ post.created_at }}</div>
           <p>{{ post.body }}</p>
-
-          <img src="{{post.image.url}}">
+          
+          {% if post.image %}
+          <img class="post-border" src="{{post.image.url}}">
+          {% endif %}
+            
+          
+          
         
         <div class="heart-btn"> 
         <a href="/like/{{post.id}}/"><img src="{% static 'img/icon-heart2.png' %}" id="img-heart" class="img-heart"></a>
@@ -79,6 +88,8 @@
       </div>
 
         <!--
+         <img src="{{post.image.url}}" >
+
           <div class="heart-btn"> 
             <Button id="btnh1" class="btn1"><i class="far fa-heart"></i></Button>
             <span class="numb" id="cont">0</span>

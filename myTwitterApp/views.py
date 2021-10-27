@@ -54,6 +54,7 @@ def index(request):
             return HttpResponseRedirect(form.errors.as_json())
 
     posts = Post.objects.order_by('created_at').reverse().all()[:20]
+
     context = {
         'posts': posts,
         'form': form
@@ -73,7 +74,7 @@ def delete(request, post_id):
 def like(request, post_id):
 
     post = Post.objects.get(id=post_id)
-    cont = post.like_count + 1
-    post.like_count = cont
+    cont_like = post.like_count + 1
+    post.like_count = cont_like
     post.save()
     return HttpResponseRedirect('/')
